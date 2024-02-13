@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geometry</title>
+    <link rel="shortcut icon" href="images/android-chrome-192x192.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.6.3/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <header class="w-[95%] m-auto mt-[40px]">
+      <div class="navbar bg-slate-200 rounded-md">
+        <div class="navbar-start">
+          <div class="dropdown">
+            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+            </div>
+            
+          </div>
+          <a class="btn btn-ghost text-xl">Interactive</a>
+        </div>
+        <div class="navbar-center hidden lg:flex">
+
+        </div>
+        <div class="navbar-end">
+          <a class="btn px-5">Blog</a>
+        </div>
+      </div>
+    </header>
+    <main class="w-[95%] m-auto my-10 grid grid-cols-1 gap-9 md:grid-cols-2 lg:grid-cols-3">
+          <!-- card-1 -->
+        <div id="card-1" onmouseenter="bg()" onmouseleave="noBg()" class="card  bg-base-100 shadow-xl">
+            <figure class="mt-[50px]"><img src="images/triangle.png" alt="Shoes" /></figure>
+            <div class="card-body text-center">
+              <h2 class="text-center text-2xl font-[500] text-gray-700">Triangle</h2>
+              <p>Area (A) = 0.5 x b x h </p>
+              <div class="flex justify-center gap-3 my-3">
+                <input id="triangle-inputBase" class=" w-[90px] rounded-md border-2 bg-slate-200 py-1 pl-2  text-[20px]" type="text" placeholder="b">
+              <span class="text-gray-400 text-[20px]">cm</span>
+              <input id="triangle-inputHight" class=" w-[90px] rounded-md border-2 bg-slate-200 py-1 pl-2 text-[20px]" type="text" type="text" placeholder="h">
+              <span class="text-gray-400 text-[20px]">cm</span>
+              </div>
+              <div>
+                <p class="text-[22px] font-[500] text-gray-500">
+                     Area : <span id="value"></span>
+                </p>
+              </div>
+              <div class="card-actions justify-end">
+                <button onclick="calculate()" class="btn btn-primary w-[80%] m-auto">Calculate</button>
+              </div>
+            </div>
+          </div>
+        <!-- card-2 -->
+        <div id="card-2" onmouseenter="bg2()" onmouseleave="noBg2()" class="card  bg-base-100 shadow-xl">
+            <figure class="mt-[50px]"><img src="images/rectangle.png" alt="Shoes" /></figure>
+            <div class="card-body text-center">
+                <h2 class="text-center text-2xl font-[500] text-gray-700">Rectangle</h2>
+                <p>Area (A) = w x l </p>
+                <div class="flex justify-center gap-3 my-3">
+                  <input id="pectangleInputWitdh" class=" w-[90px] rounded-md border-2 bg-slate-200 py-1 pl-2 text-[20px]" type="text" placeholder="w">
+                <span class="text-gray-400 text-[20px]">cm</span>
+                <input id="pectangleInputLength" class=" w-[90px] rounded-md border-2 bg-slate-200 py-1 pl-2 text-[20px]" type="text" type="text" placeholder="l">
+                <span class="text-gray-400 text-[20px]">cm</span>
+                </div>
+                <div>
+                    <p class="text-[22px] font-[500] text-gray-500">
+                         Area : <span id="pectangleArea"></span>
+                    </p>
+                  </div>
+                <div class="card-actions justify-end">
+                  <button onclick="rectangleCalculate()" class="btn btn-primary w-[80%] m-auto">Calculate</button>
+                </div>
+              </div>
+          </div>
+        <!-- card-3 -->
+        <div id="card-3" onmouseenter="bg3()" onmouseleave="noBg3()"  class="card  bg-base-100 shadow-xl">
+            <figure class="mt-[50px]"><img src="images/parallelogram.png" alt="Shoes" /></figure>
+            <div class="card-body text-center">
+                <h2 class="text-center text-2xl font-[500] text-gray-700">Parallelogram</h2>
+                <p>Area (A) = b x h</p>
+                <div class="flex justify-center gap-3 my-3">
+                  <input id="parallelogramInputBase" class=" w-[90px] rounded-md border-2 bg-slate-200 py-1 pl-2 text-[20px]" type="text" placeholder="b">
+                <span class="text-gray-400 text-[20px]">cm</span>
+                <input id="parallelogramInputHight" class=" w-[90px] rounded-md border-2 bg-slate-200 py-1 pl-2 text-[20px]" type="text" type="text" placeholder="h">
+                <span class="text-gray-400 text-[20px]">cm</span>
+                </div>
+                <div>
+                    <p class="text-[22px] font-[500] text-gray-500">
+                         Area : <span id="parallelogramArea"></span>
+                    </p>
+                  </div>
+                <div class="card-actions justify-end">
+                  <button onclick="parallelogramCalculate()"  class="btn btn-primary w-[80%] m-auto">Calculate</button>
+                </div>
+              </div>
+          </div>
+        <!-- card-4 -->
+        <div id="card-4" onmouseenter="bg4()" onmouseleave="noBg4()"  class="card  bg-base-100 shadow-xl">
+            <figure class="mt-[50px]"><img src="images/rhombus.png" alt="Shoes" /></figure>
+            <div class="card-body text-center">
+                <h2 class="text-center text-2xl font-[500] text-gray-700">Rhombus</h2>
+                <p>Area (A) = 0.5 x d<sub>1</sub> x d<sub>2</sub></p>
+                <div class="flex justify-center gap-3 my-3">
+                  <input id="rhombusInputH1" class=" w-[90px] rounded-md border-2 bg-slate-200 py-1 pl-2 text-[20px]" type="text" placeholder="d">
+                <span class="text-gray-400 text-[20px]">cm</span>
+                <input id="rhombusInputH2" class=" w-[90px] rounded-md border-2 bg-slate-200 py-1 pl-2 text-[20px]" type="text" type="text" placeholder="d">
+                <span class="text-gray-400 text-[20px]">cm</span>
+                </div>
+                <div>
+                    <p class="text-[22px] font-[500] text-gray-500">
+                         Area : <span id="rhombusArea"></span>
+                    </p>
+                  </div>
+                <div class="card-actions justify-end">
+                  <button onclick="rhombusCalculate()" class="btn btn-primary w-[80%] m-auto">Calculate</button>
+                </div>
+              </div>
+          </div>
+        <!-- card-5 -->
+        <div id="card-5" onmouseenter="bg5()" onmouseleave="noBg5()"  class="card  bg-base-100 shadow-xl">
+            <figure class="mt-[50px]"><img src="images/pentagon.png" alt="Shoes" /></figure>
+            <div class="card-body text-center">
+                <h2 class="text-center text-2xl font-[500] text-gray-700">Pentagon</h2>
+                <p>Area (A) = 0.5 x p x b</p>
+                <div class="flex justify-center gap-3 my-3">
+                  <input id="pentagonInputP" class=" w-[90px] rounded-md border-2 bg-slate-200 py-1 pl-2 text-[20px]" type="text" placeholder="p">
+                <span class="text-gray-400 text-[20px]">cm</span>
+                <input id="pentagonInputB" class=" w-[90px] rounded-md border-2 bg-slate-200 py-1 pl-2 text-[20px]" type="text" type="text" placeholder="b">
+                <span class="text-gray-400 text-[20px]">cm</span>
+                </div>
+                <div>
+                    <p class="text-[22px] font-[500] text-gray-500">
+                         Area : <span id="pentagonArea"></span>
+                    </p>
+                  </div>
+                <div class="card-actions justify-end">
+                  <button onclick="pentagonCalculate()" class="btn btn-primary w-[80%] m-auto">Calculate</button>
+                </div>
+              </div>
+          </div>
+        <!-- card-6 -->
+        <div id="card-6" onmouseenter="bg6()" onmouseleave="noBg6()"  class="card  bg-base-100 shadow-xl">
+            <figure class="mt-[50px]"><img src="images/ellipse.png" alt="Shoes" /></figure>
+            <div class="card-body text-center">
+                <h2 class="text-center text-2xl font-[500] text-gray-700">Ellipse</h2>
+                <p>Area (A) = π ab</p>
+                <div class="flex justify-center gap-3 my-3">
+                  <input id="ellipseInputA" class=" w-[90px] rounded-md border-2 bg-slate-200 py-1 pl-2 text-[20px]" type="text" placeholder="a">
+                <span class="text-gray-400 text-[20px]">cm</span>
+                <input id="ellipseInputB" class=" w-[90px] rounded-md border-2 bg-slate-200 py-1 pl-2 text-[20px]" type="text" type="text" placeholder="b">
+                <span class="text-gray-400 text-[20px]">cm</span>
+                </div>
+                <div>
+                    <p class="text-[22px] font-[500] text-gray-500">
+                         Area : <span id="ellipseArea"></span>
+                    </p>
+                  </div>
+                <div class="card-actions justify-end">
+                  <button onclick="ellipseCalculate()" class="btn btn-primary w-[80%] m-auto">Calculate</button>
+                </div>
+              </div>
+          </div>
+    </main>
+    <script src="script.js"></script>
+    <script src="script-2.js"></script>
+</body>
+</html>
