@@ -62,63 +62,63 @@ function ellipseCalculate(){
 
 function bg(){
     let bgColor = document.getElementById('card-1');
-    let bgColorIs = bgColor.style.backgroundColor = 'lightgray'
+    let bgColorIs = bgColor.classList.add('bg-gray-100')
     return bgColorIs
 }
 function noBg(){
     let bgColor = document.getElementById('card-1');
-    bgColor.style.backgroundColor = ''
+    bgColor.classList.remove('bg-gray-100')
 }
 
 // backgroundColor 2
 
 function bg2(){
     let bgColor = document.getElementById('card-2');
-    let bgColorIs = bgColor.style.backgroundColor = 'lightgray'
+    let bgColorIs = bgColor.classList.add('bg-gray-100')
     return bgColorIs
 }
 function noBg2(){
     let bgColor = document.getElementById('card-2');
-    bgColor.style.backgroundColor = ''
+    bgColor.classList.remove('bg-gray-100')
 }
 
 // backgroundColor 3
 function bg3(){
     let bgColor = document.getElementById('card-3');
-    let bgColorIs = bgColor.style.backgroundColor = 'lightgray'
+    let bgColorIs = bgColor.classList.add('bg-gray-100')
     return bgColorIs
 }
 function noBg3(){
     let bgColor = document.getElementById('card-3');
-    bgColor.style.backgroundColor = ''
+    bgColor.classList.remove('bg-gray-100')
 }
 // backgroundColor 4
 function bg4(){
     let bgColor = document.getElementById('card-4');
-    let bgColorIs = bgColor.style.backgroundColor = 'lightgray'
+    let bgColorIs = bgColor.classList.add('bg-gray-100')
     return bgColorIs
 }
 function noBg4(){
     let bgColor = document.getElementById('card-4');
-    bgColor.style.backgroundColor = ''
+    bgColor.classList.remove('bg-gray-100')
 }
 // backgroundColor 5
 function bg5(){
     let bgColor = document.getElementById('card-5');
-    let bgColorIs = bgColor.style.backgroundColor = 'lightgray'
+    let bgColorIs = bgColor.classList.add('bg-gray-100')
     return bgColorIs
 }
 function noBg5(){
     let bgColor = document.getElementById('card-5');
-    bgColor.style.backgroundColor = ''
+    bgColor.classList.remove('bg-gray-100')
 }
 // backgroundColor 6
 function bg6(){
     let bgColor = document.getElementById('card-6');
-    let bgColorIs = bgColor.style.backgroundColor = 'lightgray'
+    let bgColorIs = bgColor.classList.add('bg-gray-100')
     return bgColorIs
 }
 function noBg6(){
     let bgColor = document.getElementById('card-6');
-    bgColor.style.backgroundColor = ''
+    bgColor.classList.remove('bg-gray-100')
 }
